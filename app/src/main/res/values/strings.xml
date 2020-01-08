@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Revolut - Android Test App - Sebastian Matysiak</string>
+
+    <!-- Rates /-->
+    <string name="rates_activity_title">Rates</string>
+    <string name="rates_list_item_flag_image_content_description">Country flag</string>
+    <string name="rates_list_item_value_hint">0</string>
+
+    <!-- Currencies /-->
+    <string name="currency_canada_full_name">Canadian Dollar</string>
+    <string name="currency_european_union_full_name">Euro</string>
+    <string name="currency_sweden_full_name">Swedish Krona</string>
+    <string name="currency_united_states_full_name">US Dollar</string>
+</resources>

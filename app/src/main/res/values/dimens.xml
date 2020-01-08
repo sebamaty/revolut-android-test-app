@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_normal">16dp</dimen>
+
+    <!-- Rates -->
+    <dimen name="rates_activity_title_size">16sp</dimen>
+    <dimen name="rates_item_height">48dp</dimen>
+    <dimen name="rates_item_flag_image_size">40dp</dimen>
+</resources>

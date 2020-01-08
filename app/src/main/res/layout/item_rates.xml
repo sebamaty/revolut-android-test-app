@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/rates_item_height"
+    android:layout_marginTop="@dimen/space_small"
+    android:layout_marginBottom="@dimen/space_small">
+
+    <ImageView
+        android:id="@+id/rates_item_flag_image"
+        android:layout_width="@dimen/rates_item_flag_image_size"
+        android:layout_height="@dimen/rates_item_flag_image_size"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/space_normal"
+        android:contentDescription="@string/rates_list_item_flag_image_content_description"
+        tools:src="@drawable/united_states_of_america" />
+
+    <LinearLayout
+        android:id="@+id/rates_item_currency_names_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_toStartOf="@+id/rates_item_value"
+        android:layout_toEndOf="@+id/rates_item_flag_image"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rates_item_currency_acronym"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            tools:text="USD" />
+
+        <TextView
+            android:id="@+id/rates_item_currency_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            tools:text="US Dollar" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/rates_item_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:hint="@string/rates_list_item_value_hint"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:longClickable="false"
+        android:maxEms="7"
+        android:textAlignment="viewEnd"
+        tools:text="1183,06" />
+
+</RelativeLayout>
