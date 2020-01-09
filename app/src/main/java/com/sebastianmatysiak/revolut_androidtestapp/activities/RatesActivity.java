@@ -23,7 +23,6 @@ public class RatesActivity extends AppCompatActivity {
     RecyclerView ratesList;
 
     private RatesAdapter adapter;
-    private RatesViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class RatesActivity extends AppCompatActivity {
     }
 
     private void initViewModel() {
-        viewModel = ViewModelProviders.of(this).get(RatesViewModel.class);
+        RatesViewModel viewModel = ViewModelProviders.of(this).get(RatesViewModel.class);
         viewModel.init();
 
         viewModel

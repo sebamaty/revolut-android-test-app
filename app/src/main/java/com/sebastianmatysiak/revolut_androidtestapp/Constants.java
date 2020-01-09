@@ -10,7 +10,7 @@ public final class Constants {
             public static final String CANADA = "CAD";
             public static final String SWITZERLAND = "CHF";
             public static final String CHINA = "CNY";
-            public static final String CHECK_REPUBLIC = "CZK";
+            public static final String CZECH_REPUBLIC = "CZK";
             public static final String DENMARK = "DKK";
             public static final String UNITED_KINGDOM = "GBP";
             public static final String HONG_KONG = "HKD";
@@ -23,7 +23,7 @@ public final class Constants {
             public static final String JAPAN = "JPY";
             public static final String SOUTH_KOREA = "KRW";
             public static final String MEXICO = "MXN";
-            public static final String MALEYSIA = "MYR";
+            public static final String MALAYSIA = "MYR";
             public static final String NORWAY = "NOK";
             public static final String NEW_ZEALAND = "NZD";
             public static final String PHILIPPINES = "PHP";
@@ -31,7 +31,7 @@ public final class Constants {
             public static final String ROMANIA = "RON";
             public static final String RUSSIA = "RUB";
             public static final String SWEDEN = "SEK";
-            public static final String SONGAPORE = "SGD";
+            public static final String SINGAPORE = "SGD";
             public static final String THAILAND = "THB";
             public static final String TURKEY = "TRY";
             public static final String UNITED_STATES = "USD";

@@ -17,16 +17,12 @@ public class RatesItemViewModel {
     private int imageId;
     private String acronym;
     private String fullName;
-    private String base;
-    private String date;
     private Double rate;
 
-    public RatesItemViewModel(@DrawableRes int imageId, String acronym, String fullName, String base, String date, Double rate) {
+    public RatesItemViewModel(@DrawableRes int imageId, String acronym, String fullName, Double rate) {
         this.imageId = imageId;
         this.acronym = acronym;
         this.fullName = fullName;
-        this.base = base;
-        this.date = date;
         this.rate = rate;
     }
 
@@ -55,6 +51,6 @@ public class RatesItemViewModel {
     }
 
     public boolean isBase() {
-        return acronym.equals(Constants.Currency.EuropeanUnion.ACRONYM);
+        return acronym.equals(Constants.Currency.Acronym.EUROPEAN_UNION);
     }
 }

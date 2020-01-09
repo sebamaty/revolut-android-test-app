@@ -56,9 +56,11 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
         if (!isSlidingUp) {
             if (this.items.size() == 0) {
                 this.items.addAll(items);
+                notifyDataSetChanged();
             } else {
                 List<Integer> indexesToUpdate = new ArrayList<>();
 
+                //The algorithm below prepares indexes of only those rates that has changed
                 for (int i = 0; i < this.items.size(); i++) {
                     for (int j = 0; j < items.size(); j++) {
                         if (this.items.get(i).getCurrencyAcronym().equals(items.get(j).getCurrencyAcronym())) {
@@ -66,7 +68,7 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
                                     || this.items.get(i).isBase()) {
                                 //Update rates for all currencies
                                 this.items.get(i).setRate(items.get(j).getRate());
-                                //But don't notify first responder to update the value on the screen
+                                //But don't notify first responder to not update its value on the screen
                                 if (i != 0) {
                                     indexesToUpdate.add(i);
                                 }
