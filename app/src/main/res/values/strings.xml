@@ -7,8 +7,37 @@
     <string name="rates_list_item_value_hint">0</string>
 
     <!-- Currencies /-->
-    <string name="currency_canada_full_name">Canadian Dollar</string>
     <string name="currency_european_union_full_name">Euro</string>
+    <string name="currency_australia_full_name">Australian Dollar</string>
+    <string name="currency_bulgaria_full_name">Bulgarian Lev</string>
+    <string name="currency_brazil_full_name">Brazilian Real</string>
+    <string name="currency_canada_full_name">Canadian Dollar</string>
+    <string name="currency_switzerland_full_name">Swiss Franc</string>
+    <string name="currency_china_full_name">Chinese Yuan</string>
+    <string name="currency_check_republic_full_name">Czech Koruna</string>
+    <string name="currency_denmark_full_name">Danish Krone</string>
+    <string name="currency_united_kingdom_full_name">Pound Sterling</string>
+    <string name="currency_hong_kong_full_name">Hong Kong Dollar</string>
+    <string name="currency_croatia_full_name">Croatian Kuna</string>
+    <string name="currency_hungary_full_name">Hungarian Forint</string>
+    <string name="currency_indonesia_full_name">Indonesian Rupiah</string>
+    <string name="currency_israel_full_name">Israeli New Shekel</string>
+    <string name="currency_india_full_name">Indian Rupee</string>
+    <string name="currency_iceland_full_name">Icelandic Króna</string>
+    <string name="currency_japan_full_name">Japanese Yen</string>
+    <string name="currency_south_korea_full_name">South Korean won</string>
+    <string name="currency_mexico_full_name">Mexican Peso</string>
+    <string name="currency_malaysia_full_name">Malaysian Ringgit</string>
+    <string name="currency_norway_full_name">Norwegian Krone</string>
+    <string name="currency_new_zealand_full_name">New Zealand Dollar</string>
+    <string name="currency_philippines_full_name">Philippine peso</string>
+    <string name="currency_poland_full_name">Poland złoty</string>
+    <string name="currency_romania_full_name">Romanian Leu</string>
+    <string name="currency_russia_full_name">Russian Ruble</string>
     <string name="currency_sweden_full_name">Swedish Krona</string>
+    <string name="currency_singapore_full_name">Singapore Dollar</string>
+    <string name="currency_thailand_full_name">Thai Baht</string>
+    <string name="currency_turkey_full_name">Turkish lira</string>
     <string name="currency_united_states_full_name">US Dollar</string>
+    <string name="currency_south_african_republic_full_name">South African Rand</string>
 </resources>

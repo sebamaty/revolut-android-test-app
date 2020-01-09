@@ -61,7 +61,7 @@ public class RatesViewModel extends ViewModel {
         list.add(
                 new RatesItemViewModel(
                         R.drawable.canada,
-                        Constants.Currency.Canada.ACRONYM,
+                        Constants.Currency.Acronym.CANADA,
                         context.getString(R.string.currency_canada_full_name),
                         ratesResponseBody.getBase(),
                         ratesResponseBody.getDate(),
@@ -70,7 +70,7 @@ public class RatesViewModel extends ViewModel {
         list.add(
                 new RatesItemViewModel(
                         R.drawable.european_union,
-                        Constants.Currency.EuropeanUnion.ACRONYM,
+                        Constants.Currency.Acronym.EUROPEAN_UNION,
                         context.getString(R.string.currency_european_union_full_name),
                         ratesResponseBody.getBase(),
                         ratesResponseBody.getDate(),
@@ -79,7 +79,7 @@ public class RatesViewModel extends ViewModel {
         list.add(
                 new RatesItemViewModel(
                         R.drawable.sweden,
-                        Constants.Currency.Sweden.ACRONYM,
+                        Constants.Currency.Acronym.SWEDEN,
                         context.getString(R.string.currency_sweden_full_name),
                         ratesResponseBody.getBase(),
                         ratesResponseBody.getDate(),
@@ -88,7 +88,7 @@ public class RatesViewModel extends ViewModel {
         list.add(
                 new RatesItemViewModel(
                         R.drawable.united_states_of_america,
-                        Constants.Currency.USA.ACRONYM,
+                        Constants.Currency.Acronym.UNITED_STATES,
                         context.getString(R.string.currency_united_states_full_name),
                         ratesResponseBody.getBase(),
                         ratesResponseBody.getDate(),
