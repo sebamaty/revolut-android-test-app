@@ -49,6 +49,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/space_normal"
+        android:clickable="false"
         android:hint="@string/rates_list_item_value_hint"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"

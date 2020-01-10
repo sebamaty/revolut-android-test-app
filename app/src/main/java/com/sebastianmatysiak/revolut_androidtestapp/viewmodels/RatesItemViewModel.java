@@ -46,6 +46,10 @@ public class RatesItemViewModel {
         this.rate = rate;
     }
 
+    public boolean getClickable(int position) {
+        return position == 0;
+    }
+
     public String getCurrencyValue(Double firstResponderInputValue, Double firstResponderRate) {
         return new DecimalFormat("#.##").format(firstResponderInputValue / firstResponderRate * rate);
     }

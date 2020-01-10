@@ -27,7 +27,7 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
     private static final String TAG = RatesAdapter.class.getSimpleName();
 
     private List<RatesItemViewModel> items = new ArrayList<>();
-    private Double firstResponderInputValue = 1.0;
+    private Double firstResponderInputValue = 10.0;
     private boolean isSlidingUp;
 
     @NonNull
@@ -44,6 +44,7 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
         holder.countryFlagImage.setImageDrawable(item.getCurrencyFlagImage(holder.itemView.getContext()));
         holder.currencyAcronym.setText(item.getCurrencyAcronym());
         holder.currencyFullName.setText(item.getCurrencyFullName());
+        holder.valueInputField.setClickable(item.getClickable(position));
         holder.valueInputField.setText(item.getCurrencyValue(firstResponderInputValue, items.get(0).getRate()));
     }
 
@@ -52,31 +53,13 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
         return items.size();
     }
 
-    public void updateItems(List<RatesItemViewModel> items) {
+    public void updateItems(List<RatesItemViewModel> newItems) {
         if (!isSlidingUp) {
             if (this.items.size() == 0) {
-                this.items.addAll(items);
+                this.items.addAll(newItems);
                 notifyDataSetChanged();
             } else {
-                List<Integer> indexesToUpdate = new ArrayList<>();
-
-                //The algorithm below prepares indexes of only those rates that has changed
-                for (int i = 0; i < this.items.size(); i++) {
-                    for (int j = 0; j < items.size(); j++) {
-                        if (this.items.get(i).getCurrencyAcronym().equals(items.get(j).getCurrencyAcronym())) {
-                            if (!this.items.get(i).getRate().equals(items.get(j).getRate())
-                                    || this.items.get(i).isBase()) {
-                                //Update rates for all currencies
-                                this.items.get(i).setRate(items.get(j).getRate());
-                                //But don't notify first responder to not update its value on the screen
-                                if (i != 0) {
-                                    indexesToUpdate.add(i);
-                                }
-                            }
-                        }
-                    }
-                }
-
+                List<Integer> indexesToUpdate = RatesAdapterHelper.getIndexesToUpdate(this.items, newItems);
                 for (Integer i : indexesToUpdate) {
                     notifyItemChanged(i);
                 }
@@ -97,7 +80,12 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
         RatesItemViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener((view) -> {
+            itemView.setOnClickListener(getOnClickListener());
+            valueInputField.addTextChangedListener(new CurrencyValueChangeListener());
+        }
+
+        private View.OnClickListener getOnClickListener() {
+            return view -> {
                 isSlidingUp = true;
 
                 firstResponderInputValue = Double.parseDouble(valueInputField.getText().toString());
@@ -112,9 +100,9 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.RatesItemVie
                 //Workaround for resuming rate updates after sliding animation finishes
                 final int delay = 1000;
                 new Handler().postDelayed(() -> isSlidingUp = false, delay);
-            });
-            valueInputField.addTextChangedListener(new CurrencyValueChangeListener());
+            };
         }
+
 
         private class CurrencyValueChangeListener implements TextWatcher {
             @Override
