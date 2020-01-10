@@ -1,7 +1,6 @@
 package com.sebastianmatysiak.revolut_androidtestapp.viewmodels;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -48,7 +47,7 @@ public class RatesViewModel extends ViewModel {
                 .subscribe(ratesResponseBodySingle -> disposables.add(ratesResponseBodySingle
                         .subscribe(ratesResponseBody -> ratesListLiveData
                                         .setValue(getRatesItemViewModelList(context, ratesResponseBody)),
-                                error -> Log.e(TAG, "")))));
+                                Throwable::printStackTrace))));
     }
 
     private Single<RatesResponseBody> getLatestRates() {
